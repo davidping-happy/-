@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聖經挑戰賽 | 我要闖關</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="quiz-container">
+        
+        <div id="cover-page">
+            <h4 style="color: var(--color-text); margin-bottom: 0;">成二牧區2025 聖經總覽</h4>
+            <h1>聖經挑戰問答</h1>
+            <h2 style="color: #666;">我要闖關－新舊約縱覽</h2>
+            
+            <p>請輸入你的名字後開始闖關 🙌</p>
+            <input type="text" id="name-input" placeholder="你的名字" maxlength="15">
+            
+            <button class="start-button" onclick="startQuiz()">開始測驗</button>
+        </div>
+
+        <div id="quiz-page" style="display:none;">
+            <p id="progress-text" style="font-weight: bold;">第 1 題 / 共 5 題</p>
+            <h3 id="question-text"></h3>
+            
+            <div id="options-container">
+                </div>
+
+            <div id="feedback-area" style="display:none;">
+                <p id="feedback-text"></p>
+            </div>
+
+            <button class="next-button" onclick="nextQuestion()" disabled>下一題 &gt;</button>
+        </div>
+
+        <div id="result-page" style="display:none;">
+            <div id="success-view">
+                <h1 style="color: var(--color-primary);"><span id="result-name-success"></span> 恭喜闖關成功 🍃！</h1>
+                <p style="font-size: 1.2em;">您答對了 <strong id="correct-count-success"></strong> 題。</p>
+                <p>完成五題並答對三題以上，即可獲得「聖經問答達人」徽章！</p>
+                
+                <p class="badge">👑 「屬靈學徒」 🔆</p>
+
+                <p class="encouragement">
+                    願你生命中結出更多果子，讓神的話幫助你認識自己、活出基督。
+                </p>
+            </div>
+
+            <div id="failure-view" style="display:none;">
+                <h2 style="color: var(--color-wrong);"><span id="result-name-failure"></span> 挑戰結束，再接再厲 💪</h2>
+                <p style="font-size: 1.2em;">您答對了 <strong id="correct-count-failure"></strong> 題。</p>
+                
+                <p class="encouragement" style="color: var(--color-text);">
+                    「你的話是我腳前的燈，是我路上的光。」多讀神的話，下次一定會更好！
+                </p>
+            </div>
+
+            <div class="result-buttons">
+                <button onclick="window.location.reload()">返回首頁</button>
+                <button onclick="shareToGroup()">分享到小組 🍇</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
